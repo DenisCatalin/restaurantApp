@@ -1,0 +1,197 @@
+.dishes {
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 2.5ch;
+    padding: 2rem;
+    overflow: auto;
+    background-color: transparent;
+}
+
+.dish-card {
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(66, 66, 66, 0.301);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.dish-card:hover { box-shadow: 0px 0px 10px 2px #ff99007e; }
+.dish-card:hover .dish-card-buttons { top: 80%; opacity: 1; }
+.dish-card:hover .dish-details { transform: translateY(-10%); }
+.dish-card:hover .image-dish { width: 60%; }
+
+.dish-details {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    height: 80%;
+    transition: .3s ease-in-out;
+    background-color: transparent;
+    z-index: 2; 
+}
+
+.dish-card-buttons {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    background-color: transparent;
+}
+
+.image-dish { transition: .3s ease-in-out; width: 70%; border-radius: 10px; background-color: transparent; }
+
+.add-to-cart, .ingredients-btn {
+    width: 60px;
+    height: 60px;
+    outline: none;
+    border: none;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ff9900;
+    transform: scale(0.9);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    color: white;
+}
+
+i {
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.ingredients-btn { background-color: white; color: black; }
+.dish-name { color: white; font-family: 'Poppins', sans-serif; font-size: 1.5em; margin-bottom: 1em; text-align: center; background-color: transparent;}
+.dish-price { color: white; font-family: 'Poppins', sans-serif; font-size: 1.4em; background-color: transparent; margin: 0 1rem;}
+
+.add-to-cart:hover, .ingredients-btn:hover { box-shadow: inset 5px 5px 5px rgba(49, 49, 49, 0.623); transform: scale(1); }  
+
+@media screen and (max-width: 1050px) {
+    .dish-name { font-size: 1.3em; }
+    .ingredients-btn, .add-to-cart { width: 55px; height: 55px; font-size: 1.3em; }
+    .dish-price { font-size: 1.3em; }
+    .image-dish { width: 60%; }
+    .dish-card:hover .image-dish { width: 50%; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); }
+}
+
+/* @media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .dish-name { font-size: 1.8em; }
+    .ingredients-btn, .add-to-cart { width: 80px; height: 80px; font-size: 1.8em; }
+    .dish-price { font-size: 1.8em; }
+    .image-dish { width: 90%; }
+    .dish-card:hover .image-dish { width: 90%; }
+}   */
+
+@media screen and (max-width: 768px) {
+    .dishes {  
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-rows: 1fr;
+    }
+    .image-dish { width: 90%; }
+    .dish-card:hover .image-dish { width: 80%; }
+}
+
+@media screen and (max-width: 720px) {
+    .dish-card { width: 100%; }
+    .dishes { overflow-x: hidden; }
+    .dish-name { font-size: 1.2em; }
+    .ingredients-btn, .add-to-cart { width: 40px; height: 40px; font-size: 1.2em; }
+    .dish-price { font-size: 1.1em; }
+    .image-dish { width: 60%; }
+    .dish-card:hover .image-dish { width: 50%; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+}
+
+@media screen and (max-width: 550px) {
+    .dish-card { width: 100%; }
+    .dishes { overflow-x: hidden; }
+    .dish-name { font-size: 1.2em; }
+    .ingredients-btn, .add-to-cart { width: 50px; height: 50px; font-size: 1.2em; }
+    .dish-price { font-size: 1.2em; }
+    .image-dish { width: 60%; }
+    .dish-card:hover .image-dish { width: 50%; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+}
+
+@media screen and (max-width: 450px) {
+    .dish-card { width: 100%; }
+    .dishes { overflow-x: hidden; }
+    .dish-name { font-size: 1.1em; }
+    .ingredients-btn, .add-to-cart { width: 50px; height: 50px; font-size: 1.2em; }
+    .dish-price { font-size: 1.1em; }
+    .image-dish { width: 80%; }
+    .dish-card:hover .image-dish { width: 70%; }
+}
+
+@media screen and (max-width: 390px) {
+    .dish-card { width: 100%; }
+    .dish-name { font-size: 1.1em; }
+    .ingredients-btn, .add-to-cart { width: 45px; height: 45px; font-size: 1.2em; }
+    .dish-price { font-size: 1.1em; }
+    .image-dish { width: 80%; }
+    .dish-card:hover .image-dish { width: 70%; }
+}  
+
+@media screen and (max-width: 330px) {
+    .dish-name { font-size: .9em; }
+    .dish-card { width: 90%; }
+    .ingredients-btn, .add-to-cart { width: 40px; height: 40px; font-size: 1.2em; }
+    .dish-price { font-size: .9em; }
+}
+
+@media (max-height: 450px) and (max-width: 850px) {
+    .dish-name { font-size: .9em; }
+    .menu-header-image { display: none; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .dish-card { height: 70vh; }
+    .image-dish { width: 80%; }
+    .dish-card:hover .image-dish { width: 70%; }
+    .ingredients-btn, .add-to-cart { width: 45px; height: 45px; font-size: 1.2em; }
+    .dish-price { font-size: .9em; }
+}
+
+@media (max-height: 420px) and (max-width: 700px) {
+    .dish-name { font-size: .9em; }
+    .menu-header-image { display: none; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .dish-card { height: 80vh; }
+    .image-dish { width: 75%; }
+    .dish-card:hover .image-dish { width: 65%; }
+    .ingredients-btn, .add-to-cart { width: 40px; height: 40px; font-size: 1.1em; }
+    .dish-price { font-size: .9em; }
+}
+
+@media (max-height: 280px) and (max-width: 660px) {
+    .dish-name { font-size: .9em; }
+    .menu-header-image { display: none; }
+    .dishes { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .dish-card { height: 80vh; }
+    .image-dish { width: 60%; }
+    .dish-card:hover .image-dish { width: 50%; }
+    .ingredients-btn, .add-to-cart { width: 35px; height: 35px; font-size: 1.1em; }
+    .dish-price { font-size: .9em; }
+
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
