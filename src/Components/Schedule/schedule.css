@@ -1,0 +1,233 @@
+.schedule-page {
+    width: 100%;
+    min-height: 100vh;
+    animation: fade 1s ease-in-out;
+}
+
+.schedule-header {
+    width: 100%;
+    height: 5vh;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-update {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.schedule-container {
+    width: 100%;
+    height: 95vh;
+    padding: 1rem;
+}
+
+.schedule-cards {
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
+    user-select: none;
+    overflow: auto;
+}
+
+.schedule-card { 
+    width: 80%;
+    height: 40vh;
+    border-radius: 5px;
+    background: rgb(56, 56, 56);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 2ch;
+    margin-bottom: 1em;
+    font-family: 'Poppins', sans-serif;
+    animation: flipCard 1s ease-in-out;
+}
+
+.schedule-card-image {
+    width: 6em;
+    height: 6em;
+    background: #ff9900;
+    border-radius: 50%;
+}
+
+.schedule-title {
+    color: white;
+    background-color: transparent;
+}
+
+.schedule-date {
+    width: 50%;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    opacity: .5;
+    background-color: transparent;
+}
+
+.schedule-description {
+    background-color: transparent;
+    text-align: center;
+    width: 80%;
+    height: 20%;
+    color: white;
+    font-weight: bold;
+}
+
+.schedule-page-title {
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1em;
+    text-decoration: underline;
+}
+
+@keyframes flipCard {
+    from { transform: rotateX(10deg) rotateY(90deg); }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media screen and (max-width: 1400px) {
+    .schedule-card {
+        height: 35vh;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .schedule-update {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+    }
+    .dropdown-menu {
+        width: 30%;
+    }
+    .comments-dropdown-list {
+        width: 20%;
+    }
+    .arrow-modal {
+        width: 10%;
+    }
+    .schedule-card {
+        height: 25vh;
+    }
+    .schedule-page-title {
+        font-size: 1.5em;
+    }
+} 
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+    .schedule-card {
+        width: 80%;
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .schedule-page-title {
+        font-size: 1em;
+    }
+    .schedule-update {
+        font-size: .6em;
+    }
+    .schedule-card {
+        width: 70%;
+        height: 80vh;
+    }
+    .dropdown-menu {
+        margin-left: 5em;
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .schedule-card {
+        height: 35vh;
+    }
+    .schedule-update {
+        width: 60%;
+        text-align: center;
+        margin-top: 1em;
+        font-size: .9em;
+    }
+    .dropdown-menu {
+        width: 30%;
+    }
+    .comments-dropdown-list {
+        width: 20%;
+    }
+    .arrow-modal {
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+}  
+
+@media screen and (max-width: 450px) {
+    .schedule-page-title {
+        font-size: 1em;
+    }
+    .schedule-update {
+        font-size: .6em;
+        margin-top: 1em;
+    }
+    .schedule-card {
+        width: 70%;
+        height: 40vh;
+    }
+    .dropdown-menu {
+        margin-left: 5em;
+        font-size: .6em;
+    }
+}
+
+@media screen and (max-width: 850px) and (max-height: 430px) {
+    .schedule-title {
+        font-size: 1em;
+    }
+    .schedule-card-image {
+        width: 40%;
+        height: 20%;
+    }
+    .schedule-date {
+        font-size: 1em;
+    }
+    .schedule-description {
+        font-size: .8em;
+    }
+    .schedule-card {
+        width: 65%;
+        height: 90vh;
+    }
+    .schedule-update {
+        width: 70%;
+        font-size: .6em;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .schedule-page-title {
+        font-size: 1em;
+    }
+    .schedule-update {
+        width: 70%;
+        font-size: .5em;
+    }
+    .schedule-card {
+        width: 80%;
+        height: 65vh;
+    }
+    .dropdown-menu {
+        margin-left: 5em;
+        font-size: .6em;
+    }
+}

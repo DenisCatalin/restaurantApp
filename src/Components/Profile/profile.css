@@ -1,0 +1,420 @@
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    animation: loginAppear 1s ease-in-out;
+}
+
+.back-to-home  { height: 5vh; }
+
+.profile-grid {
+    width: 100%;
+    height: 93vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr;
+    gap: 1ch;
+    padding: .5rem;
+    grid-template-areas: 
+        "card details details orders"
+        "bookings bookings activity orders"
+        "bookings bookings changePass orders";
+}
+
+.profile-card, .profile-details, .profile-orders, .profile-bookings, .profile-activity, .profile-change-pass {
+    background: #414141;
+    border-radius: 5px;
+}
+
+.profile-orders {
+    overflow: auto;
+}
+
+.profile-order {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    padding: .5rem 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: .3s ease-in-out;
+}
+
+.profile-order-up, .profile-order-down {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.profile-order-title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .8;
+}
+
+.profile-order-price {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(48, 185, 48);
+    opacity: .8;
+}
+
+.profile-order-date {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .4;
+    font-size: 1em;
+}
+
+.profile-order-payment {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 172, 47);
+    opacity: .8;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-card {
+    grid-area: card;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding: 1rem;
+}
+
+.img-profile { width: 40%; margin-bottom: 1em; background: transparent; }
+.profile-username { 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .8;
+    margin-bottom: 1.5em;
+    width: auto;
+}
+.profile-rank { 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .8;
+    width: auto;
+    margin-bottom: .5em;
+}
+.profile-address { 
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .8;
+    width: auto;
+}
+
+.profile-details { 
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-title {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #FF9900;
+    opacity: .75;
+    letter-spacing: 1.5px;
+    font-size: 1.5em;
+}
+
+.profile-detail {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .8;
+    background: transparent;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.detail-profile {
+    width: 50%;
+    background: transparent;
+}
+
+.marginLeftEdit {
+    margin-right: 1em;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .3s ease-in-out;
+}
+
+.marginLeftEdit:hover { color: rgb(255, 174, 0); }
+
+.profile-detail-require {
+    margin-left: 5em;
+}
+
+.profile-orders { 
+    grid-area: orders;
+}
+
+.profile-bookings { 
+    grid-area: bookings;
+}
+
+.bookings-field {
+    width: 100%;
+    height: 90%;
+    border-radius: 0 0 5px 5px;
+    background: transparent;
+    overflow: auto;
+}
+
+.booking-field {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.booking-content, .booking-date {
+    color: white;
+    opacity: .8;
+}
+
+.booking-status {
+    width: 10%;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+}
+
+.b-inactive {
+    color: white;
+    opacity: .8;
+    border-radius: 5px;
+    background: gray;
+}
+
+.b-active {
+    /* rgb(6, 46, 6) verde color: #549957; */
+    color: rgb(6, 46, 6);
+    background:#549957;
+    border-radius: 5px;
+}
+
+.profile-activity {
+    grid-area: activity;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.activity-fields {
+    margin: 1em 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.field-activity {
+    width: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.activity-require { margin-left: 3em; }
+.activity-result { margin-left: 7em; }
+
+.activity-field {
+    display: flex;
+    width: 100%;
+    background: transparent;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    height: 25%;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    opacity: .8;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-change-pass {
+    grid-area: changePass;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.change-pass-input {
+    width: 70%;
+    height: 20%;
+    margin: 1em 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 .5rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.smaller { font-size: 1.2em; }
+
+.change-pass-button {
+    width: 25%;
+    height: 15%;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: #ff9900cc;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1530px) {
+    .grid-title { font-size: 1.2em; }
+    .activity-require, .activity-result { font-size: 1em; }
+    .profile-username { font-size: 1.2em; }
+    .profile-address, .profile-rank { font-size: 1em; }
+    .profile-detail-require, .profile-detail-result { font-size: 1em; }
+    .profile-order-title { font-size: 1em; }
+    .profile-order-date { font-size: .9em; }
+    .profile-order-price { font-size: 1em; }
+    .profile-order-payment { font-size: .9em; }
+    .booking-content, .booking-date, .booking-status { font-size: 1em; }
+    .smaller { font-size: 1em; }
+    .change-pass-input { width: 90%; height: 20%; }
+    .change-pass-button { width: 35%; }
+}
+
+@media screen and (max-width: 1444px) {
+    .booking-field { height: 15%; }
+    .profile-grid {
+        grid-template-areas: 
+            "card changePass activity orders"
+            "details details details orders"
+            "bookings bookings bookings orders"
+            "bookings bookings bookings orders";
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .grid-title { font-size: 1.1em; }
+    .activity-require, .activity-result { font-size: .9em; }
+    .profile-username { font-size: 1.1em; }
+    .profile-address, .profile-rank { font-size: .9em; }
+    .profile-detail-require, .profile-detail-result { font-size: .9em; }
+    .profile-order-title { font-size: .9em; }
+    .profile-order-date { font-size: .8em; }
+    .profile-order-price { font-size: .9em; }
+    .profile-order-payment { font-size: .8em; }
+    .booking-content, .booking-date, .booking-status { font-size: .9em; }
+    .smaller { font-size: .9em; }
+}
+
+@media screen and (max-width: 1170px) {
+    .grid-title { font-size: 1.1em; }
+    .activity-require, .activity-result { font-size: .9em; }
+    .profile-username { font-size: 1.1em; }
+    .profile-address, .profile-rank { font-size: .9em; }
+    .profile-detail-require, .profile-detail-result { font-size: .9em; }
+    .profile-order-title { font-size: 1em; }
+    .profile-order-date { font-size: .9em; }
+    .profile-order-price { font-size: 1em; }
+    .profile-order-payment { font-size: .9em; }
+    .booking-field { height: 15%; }
+    .profile-grid {
+        height: 130vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr;
+        grid-template-areas: 
+            "card activity changePass changePass"
+            "details details details details"
+            "bookings bookings bookings bookings"
+            "orders orders orders orders";
+    }
+    .profile-detail { height: 25%; }
+    .profile-order { height: 12%; }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+    .activity-require, .activity-result { font-size: .7em; }
+    .profile-username { font-size: 1em; }
+    .profile-address, .profile-rank { font-size: .7em; }
+    .profile-detail-require, .profile-detail-result { font-size: .8em; }
+    .profile-order-title { font-size: .9em; }
+    .profile-order-date { font-size: .8em; }
+    .profile-order-price { font-size: .9em; }
+    .profile-order-payment { font-size: .8em; }
+    .booking-field { height: 25%; }
+    .img-profile { width: 35%; }
+}
+
+@media screen and (max-width: 768px) {
+    .activity-require, .activity-result { font-size: .8em; }
+    .profile-username { font-size: 1.3em; }
+    .profile-address, .profile-rank { font-size: 1.1em; }
+    .profile-detail-require, .profile-detail-result { font-size: .8em; }
+    .profile-order-title { font-size: .9em; }
+    .profile-order-date { font-size: .8em; }
+    .profile-order-price { font-size: .9em; }
+    .profile-order-payment { font-size: .8em; }
+    .profile-grid { 
+        height: 200vh;
+        grid-template-columns: 1fr 1.5fr 1fr 1fr;
+        grid-template-rows: .5fr;
+        grid-template-areas: 
+            "card card card card"
+            "changePass changePass activity activity"
+            "details details details details"
+            "bookings bookings bookings bookings"
+            "orders orders orders orders";
+    }
+    .booking-field { margin-bottom: 1em; }
+    .img-profile { width: 30%; }
+}
+
+@media screen and (max-width: 450px) and (max-height: 850px) {
+    .activity-require, .activity-result { font-size: .8em; }
+    .profile-username { font-size: 1.1em; }
+    .profile-address, .profile-rank { font-size: .85em; }
+    .profile-detail-require, .profile-detail-result { font-size: .7em; }
+    .profile-order-title { font-size: .9em; }
+    .profile-order-date { font-size: .8em; }
+    .profile-order-price { font-size: .9em; }
+    .profile-order-payment { font-size: .8em; }
+    .booking-field { height: 25%; }
+    .booking-content, .booking-date { font-size: .7em; }
+    .booking-status { font-size: .7em; width: 25%; }
+    .img-profile { width: 35%; }
+    .profile-order { margin-bottom: 1em; }
+    .grid-title { font-size: .9em; }
+    .profile-grid { 
+        height: 200vh;
+        grid-template-columns: 1fr 1.5fr 1fr 1fr;
+        grid-template-rows: .5fr;
+        grid-template-areas: 
+            "card card card card"
+            "changePass changePass changePass changePass"
+            "activity activity activity activity"
+            "details details details details"
+            "bookings bookings bookings bookings"
+            "orders orders orders orders";
+    }
+}

@@ -1,0 +1,271 @@
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 25%;
+    height: 50vh;
+    background-color: #171717e3;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: loginAppear 1s ease-in-out;
+}
+
+.login-form-title {
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+}
+
+.register-instead {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.register-instead  h3{
+    font-size: 1em;
+    color: white;
+    background: transparent;
+    opacity: .5;
+    font-weight: 100;
+    margin-bottom: .1em;
+}
+
+.register-btn {
+    width: 40%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #ff9900c7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-form-inputs {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column wrap;
+    background: transparent;
+}
+
+.loginForm {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1em;
+    background: transparent;
+}
+
+.input-login {
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
+    padding: 0 .8rem;
+    background: #c4c4c4;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: .2s ease-in-out;
+}
+
+.label-login {
+    width: 50%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    opacity: .5;
+    position: absolute;
+    top: 25%;
+    left: 17%;
+    font-weight: bold;
+    transition: .2s ease-in-out;
+    pointer-events: none;
+}
+
+.input-login:focus ~ .label-login,
+.input-login:valid ~ .label-login {
+    top: -40%;
+    color: white;
+    opacity: .5;
+    font-size: .9em;
+}
+
+.input-login:focus {
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.4);
+    border: 2px solid #ff9900c7;
+    background: #a7a7a7;
+}
+
+.forgotPass {
+    background: transparent;
+    color: #ff9900c7;
+    font-weight: bold;
+    width: 68%;
+    transform: translateY(-45%);
+}
+
+.gender-login-form {
+    width: 50%;
+    height: 15%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gender-login-form h3 {
+    color: white;
+    opacity: .5;
+    background: transparent;
+    text-align: center;
+}
+
+.login-btn {
+    width: 70%;
+    height: 150%;
+    background: #ff9900c7;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.login {
+    width: 35%;
+    height: 10%;
+    background: #ff9900c7;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.login:hover {
+    box-shadow: 0px 0px 15px 2px #ff9900c7;
+}
+
+.altIcon {
+    font-size: 1.4em;
+    margin-left: .5em;
+}
+
+.non-link {
+    width: 80%;
+    height: 40%;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.altLink {
+    width: 100%;
+    height: 100%;
+}
+
+.login-link-text { 
+    color: white;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 5px;
+    background: transparent;
+}
+
+@keyframes loginAppear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .login-form { width: 30%; }
+}
+
+@media screen and (max-width: 1240px) {
+    .login-form { width: 35%; height: 60%; }
+    .gender-login-form { font-size: 1em; }
+}
+
+@media screen and (max-width: 1080px) {
+    .login-form { width: 55%; height: 50%; }
+    .gender-login-form { font-size: .8em; }
+}
+
+@media screen and (max-width: 870px) {
+    .login-form { width: 50%; height: 60%; }
+    .gender-login-form { font-size: .9em; }
+}
+
+@media screen and (max-width: 675px) {
+    .login-form { width: 65%; height: 60%; }
+    .gender-login-form { font-size: .9em; }
+}
+
+@media screen and (max-width: 520px) {
+    .login-form { width: 95%; height: 80%; }
+    .gender-login-form { font-size: .8em; }
+    .input-login { width: 80%; }
+}
+
+@media screen and (max-height: 850px) {
+    .login-form { height: 80%; }
+    .gender-login-form { font-size: 1em; }
+    .register-instead h3 { font-size: 1em; }
+}
+
+@media screen and (max-height: 450px) {
+    .login-form { height: 110%; }
+    .gender-login-form { font-size: .8em; }
+    .register-instead h3 { font-size: .9em; }
+}

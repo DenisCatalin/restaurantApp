@@ -1,0 +1,566 @@
+.modal-container {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.modal-header {
+    width: 100%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.modal-content {
+    width: 100%;
+    min-height: 95vh;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+}
+
+.right-side-modal { 
+    width: 40%;
+    height: 95vh;
+    padding: .5rem;
+}
+
+.image-modal {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: scale .5s ease-in-out;
+}
+
+.buttons-modal {
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.arrow-modal { font-size: 2.3em; }
+
+.add-to-cart-modal, .add-to-fav {
+    width: 25%;
+    height: 50%;
+    border: none;
+    outline: none;
+    background-color: #ff9900;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: scale .5s ease-in-out;
+    cursor: pointer;
+}
+
+.left-side-modal {
+    width: 60%;
+    min-height: 95vh;
+    padding: 0 .5rem;
+}
+
+.reviews {
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 2em;
+    animation: opacity 1s ease-in-out;
+}
+
+.reviewsSpan { opacity: .6; background-color: transparent; font-size: .6em; margin-left: .3em; }
+
+.review-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    animation: opacity 1s ease-in-out;
+}
+
+.review-container-details { 
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column wrap;
+    background-color: transparent;
+}
+
+.review-details {
+    width: 50%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    background-color: transparent;
+    font-size: 1.3em;
+}
+
+.another-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.mealName-modal { 
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.review-note { background-color: transparent; }
+.stars { margin-top: .2em; margin-bottom: .2em; font-size: .8em; background-color: transparent; }
+.count-reviews { font-size: .8em; opacity: .7; background-color: transparent; }
+.add-a-comment { width: 60%; height: 20%; border: none; outline: none; background-color: #ff9900; border-radius: 5px; font-family: 'Poppins',sans-serif; letter-spacing: 1px; font-weight: bold; }
+.reviews-progress {
+    width: 80%;
+    height: 100%;
+    display: flex;
+}
+
+.count-stars {
+    width: 10%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    color: white;
+}
+.count-stars h4 { background-color: transparent; margin-top: 1.4em; }
+
+.progress-bar-review {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.count-progress-bar {
+    width: 90%;
+    height: 50%;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+.count-bar-progress { background-color: transparent; color: white; opacity: .5; font-family: 'Poppins', sans-serif; font-size: .9em; }
+
+.ingredients-container {
+    width: 100%;
+    height: 62%;    
+    animation: opacity .5s ease-in-out;
+}
+
+.ingredients-container h1 { text-align: center; background-color: transparent; color: white; font-family: 'Poppins', sans-serif; letter-spacing: 1px; }
+.ingredients { 
+    width: 100%;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin-top: 1em;
+}
+
+.ingredient {
+    width: 15%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.ingredient h2 { font-size: .9em; text-align: center; font-family: 'Poppins', sans-serif; color: white; opacity: .5; transition: .3s ease-in-out; }
+
+.ingredient-image {
+    width: 40%;
+    object-fit: cover;
+    background-color: transparent;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    transition: .3s ease-in-out;
+}
+
+.comments-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.important { color: #ff9900; font-family: 'Poppins', sans-serif; letter-spacing: 1px; text-transform: uppercase; text-decoration: underline; background-color: transparent; }
+
+.comments-header {
+    width: 80%;
+    height: 10vh;
+    background-color: #353535;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.comments-header h3 { background-color: transparent; color: white; font-family: 'Poppins', sans-serif;}
+
+.dropdown-menu {
+    width: 15%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.dropdown-menu h3 { color: white; opacity: .5; background-color: transparent; font-size: 1em; }
+
+.comments-dropdown { 
+    width: 70%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.comments-dropdown:hover .comments-dropdown-list { opacity: 1; visibility: visible; }
+
+.dropdown-select {
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.comments-dropdown-select {
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.comments-dropdown-list {
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    width: 8%;
+    transform: translateY(3%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s linear, visibility .2s linear;
+}
+
+.comments-dropdown-items {
+    padding: .5rem;
+    font-size: 1em;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .05);
+    user-select: none;
+}
+
+.comments-dropdown-items:hover {
+    font-weight: bold;
+}
+
+.comments-search {
+    background-color: white;
+    width: 2%;
+    height: 40%;
+    border-radius: 5px;
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+.comments-search:hover { width: 15%; }
+.comments-search:hover .input-search-comments { width: 85%; }
+
+.input-search-comments {
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 0 .3rem;
+    font-family: 'Poppins', sans-serif;
+    font-family: 1.1em;
+    transition: .3s linear;
+}
+
+.input-search-comments::placeholder { font-family: 'Poppins', sans-serif; font-weight: bold; color: black; opacity: .5; font-size: 1.1em; }
+.search-comments { transition: .3s linear; background-color: white; border: none; border-radius: 0 5px 5px 0; width: 15%; height: 100%; cursor: pointer; }
+
+.comments-content { 
+    width: 80%;
+    height: 90vh;
+    background-color: #555;
+    padding: 1rem;
+}
+
+.comment {
+    width: 100%;
+    border-radius: 5px;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.profile-comment { 
+    background: #3D3D3D;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-comment-image {
+    background: transparent;
+    width: 40%;
+}
+
+.comment-name {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: transparent;
+    transform: translateY(-100%);
+    font-size: 1em;
+}
+
+.comment-date {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    opacity: .5;
+    background-color: transparent;
+    font-size: .8em;
+}
+
+.comment-content { 
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment10 { 
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 .5rem;
+}
+
+.comment-title { font-family: 'Poppins', sans-serif; color: white; text-transform: uppercase; }
+
+.comment80 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    overflow: auto;
+}
+
+.comment-text { font-size: 1em; color: white; font-family: 'Poppins', sans-serif;}
+
+.tools-field-comments {
+    width: 60%;
+    display: flex;
+}
+
+.add-reply, .see-reply {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #ff9900;
+}
+
+.comment-likes {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #ff9900;
+}
+
+.comment-likes h3, .add-reply h3, .see-reply h3 { font-family: 'Poppins', sans-serif; color: white; font-size: .8em; }
+
+.rating { color: #ff9900; }
+
+.comments-page {
+    transform: translateY(10%);
+    width: 100%;
+    height: 5%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previous-comments, .next-comments {
+    width: 10%;
+    height: 80%;
+    border: 1px solid #ff9900;
+    color: #ff9900;
+    outline: none;
+    margin: 0 .5em;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+}
+
+.inactive { background-color: gray; border: 1px solid white; color: white; opacity: .5; }
+
+.pages { 
+    width: 10%;
+    height: 70%;
+    background-color: transparent;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.page-comment {
+    background-color: transparent;
+    width: 20%;
+    border: 1px solid #ff9900;
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page-active { 
+    background-color: #ff9900;
+    color: black;
+    border: none;
+}
+
+@keyframes scale {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes opacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media screen and (min-height: 1080px) {
+    .count-stars h4 { margin-top: 1.95em; }
+}
+
+@media screen and (max-width: 1590px) {
+    .stars { font-size: .7em; }
+    .review-note { font-size: 1.7em; }
+    .count-reviews { font-size: .7em; }
+    .add-a-comment { width: 60%; font-size: .8em; }
+    .count-stars h4 { font-size: .9em; margin-top: 1.9em; }
+    .add-to-cart-modal, .add-to-fav { width: 30%; }
+}
+
+@media screen and (max-width: 1392px) {
+    .stars { font-size: .5em; }
+    .review-note { font-size: 1.4em; }
+    .count-reviews { font-size: .6em; }
+    .add-a-comment { width: 80%; font-size: .7em; height: 15%; }
+    .reviews { font-size: 1.8em; }
+    .add-to-cart-modal, .add-to-fav { width: 35%; font-size: .7em; }
+}
+
+@media screen and (max-width: 1020px) {
+    .image-modal { width: 90%; transform: translateX(5%); }
+    .modal-content { display: initial; }
+    .right-side-modal { width: 100%; }
+    .add-to-cart-modal, .add-to-fav { width: 25%; font-size: 1em; }
+    .left-side-modal { width: 100%; }
+    .review-container-details { height: 25vh; }
+    .reviews-progress { height: 25vh; }
+    .count-stars h4 { font-size: .9em; margin-top: 1.5em; }
+    .ingredients { height: 40vh; }
+    .ingredient { width: 20%; }
+    .ingredient h2 { margin-top: .5em; }
+    .add-to-cart-modal, .add-to-fav { width: 25%; font-size: 1em; }
+}
+
+@media screen and (max-width: 835px) {
+    .add-to-cart-modal, .add-to-fav { font-size: .8em; }
+}
+
+@media screen and (max-width: 605px) {
+    .count-stars h4 { font-size: .7em; margin-top: 2.3em; }
+    .stars { font-size: .4em; }
+    .count-reviews { display: none; }
+    .reviews { font-size: 1.3em; }
+    .mealName-modal { font-size: 1.1em; }
+}
+
+@media screen and (max-width: 580px) {
+    .add-to-cart-modal, .add-to-fav { font-size: 1.3em; border-radius: 50%; width: 50px; height: 50px; }
+    .ingredients-container h1 { font-size: 1.5em; }
+}
+
+@media screen and (max-width: 500px) { 
+    .reviews { font-size: 1em; }
+    .mealName-modal { font-size: .9em; }
+    .stars { font-size: .2em; }
+}
+
+@media screen and (max-width: 480px) {
+    .count-stars h4 { font-size: .5em; margin-top: 3.9em; }
+}
+
+@media screen and (max-width: 411px) {
+    .count-stars h4 { font-size: .5em; margin-top: 2.7em; }
+    .reviews { font-size: .8em; }
+    .mealName-modal { font-size: .7em; }
+    .review-note { font-size: .8em; }
+    .ingredients-container h1 { font-size: 1.2em; }
+    .reviews { font-size: .7em; }
+    .mealName-modal { font-size: .6em; }
+    .ingredient { height: 40%; width: 30%; }
+    .ingredient h2 { font-size: .6em; }
+    .arrow-modal { font-size: 1.5em; }
+    .comments-title { font-size: 1em; }
+}
+
+@media screen and (max-width: 360px) {
+    .count-stars h4 { display: none; }
+    .stars { display: none; }
+}

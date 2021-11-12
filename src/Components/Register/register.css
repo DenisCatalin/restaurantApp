@@ -1,0 +1,364 @@
+.register-page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form {
+    width: 30%;
+    height: 80vh;
+    background-color: #171717e3;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: registerAppear 1s ease-in-out;
+}
+
+.register-form-title {
+    width: 100%;
+    height: 5%;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+}
+
+.login-instead {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.login-instead  h3{
+    color: white;
+    background: transparent;
+    opacity: .5;
+    font-weight: 100;
+    margin-bottom: .1em;
+}
+
+.login-btn {
+    width: 10%;
+    height: 40%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #ff9900c7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-form-inputs {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column wrap;
+    background: transparent;
+}
+
+.registerForm {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: transparent;
+}
+
+.input-register {
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
+    padding: 0 .8rem;
+    background: #c4c4c4;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: .2s ease-in-out;
+}
+
+.label-input {
+    width: 50%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    opacity: .5;
+    position: absolute;
+    top: 25%;
+    left: 17%;
+    font-weight: bold;
+    transition: .2s ease-in-out;
+    pointer-events: none;
+}
+
+.input-register:focus ~ .label-input,
+.input-register:valid ~ .label-input {
+    top: -40%;
+    color: white;
+    opacity: .5;
+}
+
+.input-register:focus {
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.4);
+    border: 2px solid #ff9900c7;
+    background: #a7a7a7;
+}
+
+.gender-register-form {
+    width: 50%;
+    height: 10%;
+    background: transparent;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+.gender-register-form h3 {
+    color: white;
+    opacity: .5;
+    background: transparent;
+    text-align: center;
+}
+
+.select-gender-register {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+}
+
+.select-gender-register h3 {
+    margin-left: 1em;
+}
+
+.checkbox {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* position: relative; */
+}
+  
+.input-checkbox {
+    width: 60px;
+    height: 30px;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 44.5%;
+    background-color: var(--link-hover);
+}
+  
+.input-checkbox::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    background-color: #ff9900c7;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.4), inset 5px 2px 5px rgba(0, 0, 0, 0.4);
+}
+  
+.input-checkbox:checked::before {
+    left: 50%;
+}
+
+.birthday-register-form {
+    width: 60%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+}
+
+.birthday-register-form h3 {
+    color: white;
+    opacity: .5;
+    background: transparent;
+}
+
+.birthday-register-inputs {
+    width: 100%;
+    height: 30%;
+    background: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.input-birthday-day, .input-birthday-month, .input-birthday-year {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 0 .5rem;
+    color: white;
+}
+
+.input-birthday-day:focus, .input-birthday-month:focus, .input-birthday-year:focus {
+    border: 2px solid #ff9900c7;
+}
+
+.input-register-filled { border: 2px solid #ff9900c7; font-weight: bold; }
+
+.input-birthday-day {width: 15%;}
+.input-birthday-year {width: 20%;}
+
+.register {
+    width: 30%;
+    height: 7%;
+    background: #ff9900c7;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.register:hover {
+    width: 40%;
+    box-shadow: 0px 0px 10px 3px rgba(192, 117, 20, 0.4);
+}
+
+.backToLanding {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    pointer-events: all;
+}
+
+@keyframes registerAppear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:1700px) {
+    .register-form { width: 35%; }
+    .male-register { margin-right: 2em; }
+}
+
+@media screen and (max-width:1400px) {
+    .register-form { width: 40%; }
+    .male-register { margin-right: 3em; }
+}
+
+@media screen and (max-width:1200px) {
+    .register-form { width: 45%; }
+    .male-register { margin-right: 3em; }
+}
+
+@media screen and (max-width:1200px) {
+    .register-form { width: 45%; }
+    .male-register { margin-right: 3em; }
+}
+
+@media screen and (max-width:1024px) {
+    .register-form { width: 40%; }
+    .male-register { margin-right: 3em; }
+}
+
+@media screen and (max-width:1024px) and (max-height:1366px) {
+    .register-form { width: 60%; }
+    .male-register { margin-right: 3em; }
+}
+
+@media screen and (max-width:450px) {
+    .register-form { width: 100%; }
+    .male-register { margin-right: 5em; }
+    .male-register, .female-register { font-size: 1em; }
+    .birthday-register-form { width: 80%; }
+    .register-form-title { font-size: 1em; }
+    .login-instead h3 { font-size: 1em; }
+    .input-register { height: 90%; }
+    .label-input { font-size: .9em; top: 26%; }
+}
+
+@media screen and (max-width:380px) {
+    .register-form { width: 100%; height: 90vh; transform: translateY(3%); }
+    .male-register { margin-right: 5em; }
+    .male-register, .female-register { font-size: 1em; }
+    .birthday-register-form { width: 80%; }
+    .register-form-title { font-size: 1em; }
+    .login-instead h3 { font-size: .7em; }
+    .login-btn { height: 20%; font-size: .6em; }
+    .input-register { height: 120%; }
+    .label-input { font-size: .7em; top: 20%; }
+    .input-birthday-day { width: 18%; }
+    .birthday-register-form h3 { font-size: 1em; }
+    .gender-register-form h3 { 
+        font-size: 1em;
+    }
+    .birthday-register-inputs {
+        height: 40%;
+        width: 100%;
+    }
+    .input-register:focus ~ .label-input,
+    .input-register:valid ~ .label-input {
+        top: -60%;
+        color: white;
+        opacity: .5;
+    }
+}
+
+@media screen and (max-width: 850px) and (max-height:450px) {
+    .register-form { width: 90%; height: 120vh; transform: translateY(20%); }
+    .input-register { height: 180%; }
+    .birthday-register-form h3 { font-size: 1em; }
+    .gender-register-form h3 { font-size: 1em; }
+    .register-form-title { font-size: 1em; }
+    .login-instead h3 { font-size: .7em; }
+    .damnH3 { display: none; }
+    .birthday-register-inputs { height: 60%; }
+    .label-input { font-size: .55em; }
+    .input-register:focus ~ .label-input,
+    .input-register:valid ~ .label-input {
+        color: rgb(0, 0, 0);
+        opacity: .8;
+        top: -35%;
+    }
+}
