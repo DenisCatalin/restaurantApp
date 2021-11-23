@@ -75,11 +75,10 @@ const ModalGallery = () => {
         if(width > 1400) setToggleMenu(false);
         else setToggleMenu(true);
     }, [height, width]);
-
+ 
     useEffect(() => {
         getImage(idImage.current);
-        getPhotoLikes(idImage.current);
-
+        getPhotoLikes(idImage.current);   
         Axios.get(`http://localhost:3001/viewgallery/${idImage.current}`)
         .then(response => {
             if(response.data.message === undefined) {

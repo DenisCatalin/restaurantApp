@@ -5,7 +5,7 @@ const Dishes = ({data}) => {
     let dishComp;
 
     if(data !== undefined) {
-        try { dishComp = data.map((_dish, i) => { return <Dish key={i} id={data[i].idMeal} meal={data[i].strMeal} image={data[i].strMealThumb} pr={'$15.99'}/> }) }
+        try { dishComp = data.map((_dish, i) => { return <Dish key={i} idDish={i} data={data} id={data[i].idMeal} meal={data[i].strMeal} image={data[i].strMealThumb} pr={'$15.99'}/> }) }
         catch(err) {  }
     }
 

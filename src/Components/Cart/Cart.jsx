@@ -1,49 +1,26 @@
 import {useState, useEffect} from 'react'
-import Axios from 'axios'
-import Cookie from 'js-cookie'
-import {Link, useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import CartItem from './CartItem'
 import './cart.css'
+import { useSelector } from 'react-redux'
+import { selectCartItems, selectCartTotal, selectCartItemsCount } from '../../redux/cart/cart.selectors'
+import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 
 const Cart = () => {
-    let cartArray = [];
+    const cartItemss = useSelector(selectCartItems);
+    const cartTotall = useSelector(selectCartTotal);
+    const cartItemsCount = useSelector(selectCartItemsCount);
+
     let deliveryOptions = ['Personal Pick-up - $0.00', 'Standard delivery - $4.00', 'Fast Delivery - $8.00'];
     const [delivery, setDelivery] = useState('');
     const darkmodeBool = JSON.parse(localStorage.getItem('darkmode'));
     const [darkmode, setDarkmode] = useState(darkmodeBool);
-    const history = useHistory();
-    const [products, setProducts] = useState([]);
-    const [cartPrice, setCartPrice] = useState(0);
     const [deliveryFee, setDeliveryFee] = useState(0);
-    const [cartItems, setCartItems] = useState(0);
-    const cartProducts = JSON.parse(localStorage.getItem('quantityCart'));
 
     useEffect(() => {
         if(darkmodeBool === true) setDarkmode(true);
         else setDarkmode(false);
     }, [darkmodeBool]);
-
-    const getID = Cookie.get('_SecureAuth');
-    useEffect(() => {
-        Axios.get(`http://localhost:3001/getUsername/${getID}`)
-        .then(response => {
-            if(response.data.message === 'Not Found') history.push('/login');
-        }).catch(err => console.log(err));
-
-        Axios.get(`http://localhost:3001/getusercart/${getID}`)
-        .then(response => {
-            if(response.data.user !== '') {
-                const string = response.data.user.Products;
-                const array = string.split(',');
-                if(array !== '') {
-                    setProducts(array);
-                    setCartItems(array.length);
-                }
-                if(response.data.user.TotalPrice < 0.99) setCartPrice(0);
-                else setCartPrice(response.data.user.TotalPrice);
-            }
-        }).catch(err => console.log(err));
-    }, [getID, history, cartProducts]);
 
     return (
         <div className='cart-page' style={{background: darkmode ? '#252525' : '#AAA'}}>
@@ -59,15 +36,11 @@ const Cart = () => {
                             <h3 className='table-price' style={{color: darkmode ? '#FF9900' : '#000'}}>Price</h3>
                             <h3 className='table-total' style={{color: darkmode ? '#FF9900' : '#000'}}>Total</h3>
                         </div>
-                        {products.map((product, i) => {
-                            if(localStorage.getItem('quantityCart') !== null) {
-                                const cartProducts = JSON.parse(localStorage.getItem('quantityCart'));
-                                localStorage.setItem('quantityCart', JSON.stringify(cartProducts));
-                            }
-                            cartArray.push({id: product, quantity: 1});
-                            localStorage.setItem('quantityCart', JSON.stringify(cartArray));
-                            return <CartItem code={product} key={i} price='15.99'/>
-                        })}
+                        {
+                            cartItemss.map(cartItem => (
+                                <CartItem cartItem={cartItem} code={cartItem.idMeal} key={cartItem.idMeal} price='15.99'/>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
@@ -75,8 +48,8 @@ const Cart = () => {
                 <div className="summary" style={{background: darkmode ? '#383838' : '#CCC'}}>
                     <h3 className="summary-title" style={{color: darkmode ? '#CCC' : '#000'}}>ORDER SUMMARY</h3>
                     <div className="summary-items">
-                        <h3 style={{color: darkmode ? '#CCC' : '#000'}}>YOU GOT {cartItems} ITEMS</h3>
-                        <h3 style={{color: darkmode ? '#ccc' : '#000'}}>${cartPrice}</h3>
+                        <h3 style={{color: darkmode ? '#CCC' : '#000'}}>YOU GOT {cartItemsCount} ITEMS</h3>
+                        <h3 style={{color: darkmode ? '#ccc' : '#000'}}>${cartTotall.toFixed(2)}</h3>
                     </div>
                     <div className="shipping-div">
                         <h3 style={{color: darkmode ? '#ccc' : '#000'}}>SHIPPING</h3>
@@ -97,9 +70,9 @@ const Cart = () => {
                     </div>
                     <div className="total-summary">
                         <h3 style={{color: darkmode ? '#CCC' : '#000'}}>TOTAL COST</h3>
-                        <h3 style={{color: darkmode ? '#CCC' : '#000'}}>${(cartPrice+deliveryFee).toFixed(2)}</h3>
+                        <h3 style={{color: darkmode ? '#CCC' : '#000'}}>${(cartTotall+deliveryFee).toFixed(2)}</h3>
                     </div>
-                    <button className="checkout-summary" style={{background: darkmode ? '#252525' : '#EEE', color: darkmode ? '#CCC' : '#000'}}>CHECKOUT</button>
+                    <StripeCheckoutButton price={cartTotall}>CHECKOUT</StripeCheckoutButton>
                 </div>
             </div>
         </div>

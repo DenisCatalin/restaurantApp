@@ -14,7 +14,6 @@ const Menu = () => {
     const [darkmode, setDarkmode] = useState(darkmodeBool);
     const history = useHistory();
     
-
     useEffect(() => {
         if(darkmodeBool === true) setDarkmode(true);
         else setDarkmode(false);
@@ -38,7 +37,7 @@ const Menu = () => {
                 if(data !== undefined) setDishData(data.meals);
             }());
         }    
-    }, [search]);
+    }, [search, history, text]);
 
     useEffect(() => {
         if(width > 1400) setToggleMenu(false);
