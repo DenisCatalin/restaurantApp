@@ -3,9 +3,12 @@ import {useState, useEffect} from 'react'
 import useResize from '../../customStates/useResize'
 import Dishes from './Dishes'
 import './menu.min.css'
+import { useSelector } from 'react-redux'
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors'
 
 const Menu = () => {
 
+    const cartItemsCount = useSelector(selectCartItemsCount);
     const [search, setSearch] = useState('');
     const [dishData, setDishData] = useState();
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -72,7 +75,7 @@ const Menu = () => {
                 </ul>
                 
                 <div className="header-menu-profile">
-                    <Link to='/cart' className='header-cart' style={{background: darkmode ? '#FF9900' : '#171717', color: darkmode ? '#252525' : '#fff'}}><i className="fas fa-shopping-cart"></i></Link>
+                    <Link to='/cart' className='header-cart' style={{background: darkmode ? '#FF9900' : '#171717', color: darkmode ? '#252525' : '#fff'}}><i className="fas fa-shopping-cart"></i><span className='header-cart-counter' style={{display: cartItemsCount > 0 ? 'flex' : 'none', background: darkmode ? '#252525' : '#FFF', color: darkmode ? '#fff' : '#252525', border: darkmode ? '1px solid #FF9900' : '1px solid black'}}>{cartItemsCount}</span></Link>
                     <div className="categories-responsive" style={{ opacity: toggleMenu ? '1' : '0', pointerEvents: toggleMenu ? 'all' : 'none' }}>
                         <ul className="menu-categories-responsivee" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
                             <li className={text === 'Chicken' ? 'menu-category active' : 'menu-category'} style={{color: darkmode ? '#fff' : '#252525'}} onClick={categClick}>Chicken</li>
@@ -95,7 +98,10 @@ const Menu = () => {
                 <button className="menu-categories-responsive" onClick={() => setToggleMenu(!toggleMenu)} style={{textShadow: toggleMenu ? '2px 3px  #ff990085' : 'none', color: darkmode ? '#fff' : '#000'}}><i className="fas fa-ellipsis-h"></i></button>
             </div>
             <div className="menu-container" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-                <Dishes data={dishData}/>
+                {dishData ? 
+                <Dishes data={dishData}/> 
+                : 
+                null}
             </div>
         </div>
     )

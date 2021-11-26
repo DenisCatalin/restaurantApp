@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import {useState, useEffect} from 'react'
 import Axios from 'axios'
-import './schedule.css'
-import ScheduleCard from "./ScheduleCard"
+import ScheduleCard from "../../Components/schedule-card/schedule-card.component"
+import { OrangeUnderlined, ScheduleCards, ScheduleContainer, ScheduleContent, ScheduleHeader, ScheduleHeaderText, SchedulePageTitle } from "./schedule.styles"
 
-const Schedule = () => {
+const SchedulePage = () => {
     const [month, setMonth] = useState('Select month');
     const [schedules, setSchedules] = useState([]);
     const darkmodeBool = JSON.parse(localStorage.getItem('darkmode'));
@@ -29,10 +29,10 @@ const Schedule = () => {
     }
 
     return (
-        <div className='schedule-page' style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-            <div className="schedule-header" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+        <ScheduleContainer style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+            <ScheduleHeader style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
                 <Link to='/' className="fas fa-arrow-left arrow-modal" style={{color: darkmode ? '#fff' : '#000'}}></Link>
-                <h3 className="schedule-update" style={{color: darkmode ? '#fff' : '#000'}}>Autumn <span className="important">UPDATE</span>: Opening hours for our restaurant will be at <span className="important">10AM</span> everyday and the closing hour is <span className="important">1AM</span></h3>
+                <ScheduleHeaderText style={{color: darkmode ? '#fff' : '#000'}}>Autumn <OrangeUnderlined>UPDATE</OrangeUnderlined>: Opening hours for our restaurant will be at <OrangeUnderlined>10AM</OrangeUnderlined> everyday and the closing hour is <OrangeUnderlined>1AM</OrangeUnderlined></ScheduleHeaderText>
                 <div className="dropdown-menu">
                     <div className="comments-dropdown">
                         <div className="comments-dropdown-select" style={{background: darkmode ? '#FFF' : '#252525'}}>
@@ -55,10 +55,10 @@ const Schedule = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="schedule-container" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-                <h1 className='schedule-page-title' style={{color: darkmode ? '#FFF' : '#000'}}>UPCOMING <span className="important">EVENTS</span> AT OUR RESTAURANT</h1>
-                <div className="schedule-cards" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+            </ScheduleHeader>
+            <ScheduleContent style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+                <SchedulePageTitle style={{color: darkmode ? '#FFF' : '#000'}}>UPCOMING <OrangeUnderlined>EVENTS</OrangeUnderlined> AT OUR RESTAURANT</SchedulePageTitle>
+                <ScheduleCards style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
                 {schedules.map((schedule, id) => (
                     <ScheduleCard 
                         key={id}
@@ -70,10 +70,10 @@ const Schedule = () => {
                         stopHour={schedule.EventStopHour}
                     />
                 ))}
-                </div>
-            </div>
-        </div>
+                </ScheduleCards>
+            </ScheduleContent>
+        </ScheduleContainer>
     )
 }
 
-export default Schedule
+export default SchedulePage;

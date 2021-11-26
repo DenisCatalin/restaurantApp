@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import useResize from '../../customStates/useResize'
 import Axios from 'axios'
 import './contact.css'
+import PageHeader from '../../Components/page-header/page-header.component'
 // import ParticleBackground from '../../Particles/ParticleBackground'
 
 const Contact = () => {
@@ -62,7 +63,6 @@ const Contact = () => {
 
     return (
         <div className='contact-page' style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-            {/* <ParticleBackground /> */}
             {height > 535
             ?
             <div className="background-contact" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
@@ -71,9 +71,7 @@ const Contact = () => {
                         <h3>{notification}</h3>
                     </div>
                 </div>
-                <div className="contact-header" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-                    <Link to='/' className="fas fa-arrow-left" style={{color: darkmode ? '#FFF' : '#000'}}></Link>
-                </div>
+                <PageHeader path={'/'}/>
                 <div className="contact-container" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
                     <div className="contact-form" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
                         <div className="googlemaps" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>

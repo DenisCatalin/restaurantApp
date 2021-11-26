@@ -104,12 +104,6 @@ const Login = () => {
                         </div>
                         <Link to='/forgotpassword' className="forgotPass">Forgot password?</Link>
                     </div>
-                    <div className="gender-login-form">
-                        <h3>Or login with:</h3>
-                        <i className="fab fa-facebook altIcon"></i>
-                        <i className="fab fa-google altIcon"></i>
-                        <i className="fab fa-instagram altIcon"></i>
-                    </div>
                     <h3 style={styleMessage}>{message}</h3>
                     <button className="login" style={pendingStyle} onClick={login}>LOGIN</button>
                 </div>

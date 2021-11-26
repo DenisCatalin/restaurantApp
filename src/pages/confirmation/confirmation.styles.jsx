@@ -1,12 +1,15 @@
-.confirmation-container {
+import styled from "styled-components";
+
+export const ConfirmationContainer = styled.div`
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    background-color: #252525;
+`;
 
-.confirmation-box {
+export const ConfirmationBox = styled.div`
     width: 60%;
     height: 50vh;
     background: rgb(39, 39, 39);
@@ -18,18 +21,4 @@
     align-items: flex-start;
     flex-direction: column;
     border: 2px solid #ff9900c7;
-}
-
-.confirmation-box h1, .h2-text, .h3-text {
-    background: transparent;
-    color: white;
-}
-
-.confirmation-link {
-    text-decoration: underline;
-    color: #ff9900c7;
-    background: transparent;
-    text-transform: uppercase;
-}
-
-h1, h2, h3 { background: transparent; }
+`;

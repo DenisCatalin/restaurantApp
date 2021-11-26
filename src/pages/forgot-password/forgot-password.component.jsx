@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
-import './forgotpass.css'
+import { ForgotButton, ForgotContainer, ForgotContent, ForgotDescription, ForgotFormInput, ForgotFormTitle, ForgotFormWrapper, ForgotInput, ForgotLabel, ForgotMessage, ForgotSend } from './forgot-password.styles'
+import PageHeader from '../../Components/page-header/page-header.component'
 
 const ForgotPass = () => {
     // const history = useHistory();
@@ -56,32 +57,32 @@ const ForgotPass = () => {
     const clickInput = () => { setSend(false); }
 
     return (
-        <div className='forgot-page' style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+        <ForgotContainer style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
             <div className="m-g-n" style={{left: notificationOn ? '2%' : '-50%', background: '#c25d5d'}}>
                 <div className="mgn-content">
                     <h3>{notification}</h3>
                 </div>
             </div>
-            <div className="forgot-container" style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
-                <Link to='/login' className="fas fa-arrow-left backToLanding" style={{color: darkmode ? '#FFF' : '#000'}}></Link>
-                <div className="forgot-form" style={{background: darkmode ? '#171717' : '#AAA'}}>
-                    <div className="forgot-form-title">PASSWORD FORGOTTEN</div>
-                    <div className="forgot-description" style={{background: darkmode ? '#252525' : '#CCC'}}>
+            <ForgotContent style={{background: darkmode ? '#252525' : '#EEEEEE'}}>
+                <PageHeader path={'/login'}/>
+                <ForgotFormWrapper style={{background: darkmode ? '#171717' : '#AAA'}}>
+                    <ForgotFormTitle>PASSWORD FORGOTTEN</ForgotFormTitle>
+                    <ForgotDescription style={{background: darkmode ? '#252525' : '#CCC'}}>
                         <h4 style={{color: darkmode ? '#FFF' : '#000'}}>If you forgot your password, you will have to enter your e-mail that corresponds with your lost account. After that, an e-mail will be sent to you for further details in order to recover your password.</h4>
-                    </div>
-                    <div className="forgot-form-input">
-                        <input type="text" id='email' className='forgot-input' onClick={clickInput} onChange={(e) => setEmail(e.target.value)} required='required'/>
-                        <label htmlFor="email" className='forgot-label'>E-mail</label>
-                    </div>
-                    <div className="forgot-message" style={{opacity: send ? '1' : '0', zIndex: send ? '11' : '-1', background: verified ? '#549957' : '#ad4646', color: verified ? 'rgb(6, 46, 6)' : 'rgb(46, 6, 6)'}}>
+                    </ForgotDescription>
+                    <ForgotFormInput>
+                        <ForgotInput type="text" id='email'  onClick={clickInput} onChange={(e) => setEmail(e.target.value)} required='required'/>
+                        <ForgotLabel htmlFor="email">E-mail</ForgotLabel>
+                    </ForgotFormInput>
+                    <ForgotMessage style={{opacity: send ? '1' : '0', zIndex: send ? '11' : '-1', background: verified ? '#549957' : '#ad4646', color: verified ? 'rgb(6, 46, 6)' : 'rgb(46, 6, 6)'}}>
                         <h4>{message}</h4>
-                    </div>
-                    <div className="forgot-button">
-                        <button className="forgot-send" style={{opacity: send ? '0' : '1'}} onClick={recoverPassword}>SEND</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </ForgotMessage>
+                    <ForgotButton>
+                        <ForgotSend style={{opacity: send ? '0' : '1'}} onClick={recoverPassword}>SEND</ForgotSend>
+                    </ForgotButton>
+                </ForgotFormWrapper>
+            </ForgotContent>
+        </ForgotContainer>
     )
 }
 

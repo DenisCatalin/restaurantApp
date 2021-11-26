@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react'
 import Axios from 'axios';
 import {useParams, useHistory} from 'react-router-dom'
-import './forgotpass.css'
+import { Reset, ResetButton, ResetFormInput, ResetFormTitle, ResetInput, ResetLabel, ResetPasswordContainer, ResetPasswordContent, ResetPasswordForm } from './reset-password.styles';
+// import './forgotpass.css'
 
 const ResetPass = () => {
     const [showContent, setShowContent] = useState(false);
@@ -58,30 +59,30 @@ const ResetPass = () => {
     }
 
     return (
-        <div className='reset-page' style={{display: showContent ? 'flex' : 'none'}}>
+        <ResetPasswordContainer style={{display: showContent ? 'flex' : 'none'}}>
             <div className="m-g-n" style={{left: notificationOn ? '2%' : '-50%', background: notificationColor ? '#6ec25d' : '#c25d5d'}}>
                 <div className="mgn-content">
                     <h3>{notification}</h3>
                 </div>
             </div>
-            <div className="reset-container">
-                <div className="reset-form">
-                    <div className="reset-form-title">RESET YOUR PASSWORD</div>
-                    <div className="reset-form-input">
-                        <input type="password" className="reset-input" onChange={(e) => setPassword(e.target.value)} id='password'/>
-                        <label htmlFor="password" className='reset-label'>New Password</label>
-                    </div>
-                    <div className="reset-form-input">
-                        <input type="password" className="reset-input" onChange={(e) => setCPassword(e.target.value)} id='cpassword'/>
-                        <label htmlFor="cpassword" className='reset-label'>Confirm Password</label>
-                    </div>
-                    <div className="reset-button">
-                        <button className="reset" style={pendingStyle} onClick={resetPassword}>RESET</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <ResetPasswordContent>
+                <ResetPasswordForm>
+                    <ResetFormTitle>RESET YOUR PASSWORD</ResetFormTitle>
+                    <ResetFormInput>
+                        <ResetInput type="password" onChange={(e) => setPassword(e.target.value)} id='password'/>
+                        <ResetLabel htmlFor="password">New Password</ResetLabel>
+                    </ResetFormInput>
+                    <ResetFormInput>
+                        <ResetInput type="password" onChange={(e) => setCPassword(e.target.value)} id='cpassword'/>
+                        <ResetLabel htmlFor="cpassword">Confirm Password</ResetLabel>
+                    </ResetFormInput>
+                    <ResetButton>
+                        <Reset style={pendingStyle} onClick={resetPassword}>RESET</Reset>
+                    </ResetButton>
+                </ResetPasswordForm>
+            </ResetPasswordContent>
+        </ResetPasswordContainer>
     )
 }
 
-export default ResetPass
+export default ResetPass;

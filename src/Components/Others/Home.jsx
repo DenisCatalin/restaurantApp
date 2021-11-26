@@ -37,7 +37,7 @@ const Home = () => {
                             <h2>THE FINEST RESTAURANT IN THE AREA</h2>
                         </div>
                         <div className="button-section-landing">
-                            <button className="read-more-landing"><Link to='/about' className='unPisat'>READ MORE</Link></button>
+                            <button className="read-more-landing"><Link to='/about' style={{background: 'transparent', textDecoration: 'none', color: 'black'}}>READ MORE</Link></button>
                         </div>
                     </div>
                 </div>
