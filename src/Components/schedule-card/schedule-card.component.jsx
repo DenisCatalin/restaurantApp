@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { ScheduleCardImage, ScheduleDate, ScheduleDescription, ScheduleItem } from './schedule-card.styles';
-import { OrangeUnderlined } from '../../pages/schedule/schedule.styles';
+import { OrangeUnderlined } from "../../globalStyles"
 
 const ScheduleCard = ({ eventType, month, day, year, startHour, stopHour }) => {
     const darkmodeBool = JSON.parse(localStorage.getItem('darkmode'));

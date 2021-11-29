@@ -25,13 +25,6 @@ export const ScheduleHeaderText = styled.h3`
     font-family: 'Poppins', sans-serif;
 `;
 
-export const OrangeUnderlined = styled.span` {/* globalStyles */}
-    text-decoration: underline;
-    color: #FF9900;
-    font-weight: bold;
-    background: transparent;
-`;  
-
 export const ScheduleContent = styled.div`
     width: 100%;
     height: 95vh;

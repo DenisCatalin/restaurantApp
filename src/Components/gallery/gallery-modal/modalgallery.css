@@ -1,0 +1,484 @@
+
+
+.modal-gallery {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    transition: .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    animation: galleryContent 1s ease-in-out;
+}
+
+.modal-gallery-header { 
+    width: 100%;
+    height: 5vh;
+ }
+
+.gallery-modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: appeasr 1s ease-in-out;
+}
+
+.image-content {
+    width: 70%;
+    height: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.modal-image-container {
+    width: 90%;
+    background-color: transparent;
+}
+
+.prev-gallery-image, .next-gallery-image {
+    width: 5%;
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.prev-gallery-image:hover, .next-gallery-image:hover {
+    transform: scale(1.15);
+    color: gray;
+}
+
+.modal-image-img {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-modal-comments-container {
+    width: 30%;
+    height: 90%;
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.gallery-modal-profile {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+}
+
+.gallery-modal-profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../../../img/profile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-modal-profile {
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.gallery-modal-profile-details {
+    margin-left: 1em;
+    background: transparent;
+}
+
+.gallery-modal-profile-details h3 {
+    color: #ff9900;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gallery-modal-profile-details h4 {
+    color: rgba(255, 255, 255, .5);
+    background: transparent;
+    font-size: .75em;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.modal-gallery-tools {
+    width: 100%;
+    height: 5%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+}
+
+.modal-gallery-tools-like, .modal-gallery-tools-comment {
+    width: 30%;
+    height: 100%;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, .5);
+}
+
+.modal-gallery-tools-like:hover, 
+.modal-gallery-tools-comment:hover {
+    color: #ff9900;
+}
+
+.marginRight {
+    margin-right: .5em;
+}
+
+.gallery-modal-comment-content {
+    width: 100%;
+    height: 75%;
+    border-radius: 10px;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.gallery-modal-comment {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.mue { 
+    opacity: 0; 
+    transition: .3s ease-in-out;
+    color: white;
+    position: absolute;
+    left: 99.5%;
+    top: 30%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.edit-comment {
+    position: absolute;
+    background: #171717;
+    border-radius: 5px;
+    width: 35%;
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    z-index: 5;
+    top: 55%;
+    left: 68%;
+}
+
+.edit-comment-item {
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: .2em;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.edit-comment-item:hover {
+    background: #383838;
+}
+
+.gallery-modal-comment:hover .mue {
+    opacity: 1;
+}
+
+.gallery-modal-comment-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(../../../img/profile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-modal-content-comment {
+    width: 85%;
+    height: auto;
+    background: rgb(59, 59, 59);
+    border-radius: 10px;
+    padding: .2rem .5rem;
+}
+
+.gallery-modal-content-comment h2, .gallery-modal-content-comment h3 {
+    font-size: 1em;
+    background: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gallery-modal-content-comment h2 {  
+    opacity: .5;
+    font-size: .9em;
+    margin-bottom: .3em;
+}
+
+.gallery-modal-content-comment h3 { 
+    font-size: .8em;
+}    
+
+.modal-gallery-input {
+    width: 100%;
+    height: 5%;
+    border-radius: 10px;
+}
+
+.input-gallery-modal-post {
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 .5rem;
+    border-radius: 10px 0 0 10px;
+    transition: .3s ease-in-out;
+}
+
+.input-gallery-modal-post {
+    color: white;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.post-comment-gallery {
+    width: 10%;
+    height: 115%;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.2em;
+    color: #ff9900;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.fa-paper-plane {
+    transition: .3s ease-in-out;
+}
+
+.post-comment-gallery:hover .fa-paper-plane {
+    transform: scale(1.2);
+}
+
+.modal-gallery-close {
+    color: white;
+    width: 5%;
+    font-size: 2.5em;
+    transform: translate(30%,30%);
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.m-g-n {
+    width: 25%;
+    height: 15vh;
+    background: #000;
+    transition: .3s ease-in-out;
+    position: absolute;
+    top: 78%;
+    left: -50%;
+    border-radius: 5px;
+    user-select: none;
+    text-align: center;
+}
+
+.mgn-content {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liked {
+    color: #ff9900;
+}
+
+.edit-comment-field { 
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 63%;
+    border: 1px solid gray;
+    padding: .3rem;
+    border-radius: 5px;
+    resize: none;
+}
+
+@keyframes galleryContent {
+    from {
+        opacity: 0;
+        pointer-events: none;
+    }
+    to {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media screen and (max-width: 1710px) {
+    .modal-gallery-tools-comment, .modal-gallery-tools-like {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width: 1510px) {
+    .modal-gallery-tools-comment, .modal-gallery-tools-like {
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .gallery-modal-content {
+        flex-direction: column;
+    }
+    .image-content { 
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .gallery-modal-comments-container {
+        width: 90%;
+        height: 90%;
+        display: none;
+    }
+    .next-gallery-image, .prev-gallery-image { font-size: 2.5em; }
+    .modal-gallery-input { height: 7%; }
+    .post-comment-gallery { height: 10%; }
+    .gallery-modal-comment-content { height: 70%; }
+    .gallery-modal-profile h3 { font-size: 1.8em; }
+    .gallery-modal-profile h4 { font-size: 1.3em; }
+    .gallery-modal-profile-image { width: 100px; height: 100px; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: 1.5em; }
+    .seeTheComments {
+        width: 35%;
+        height: 5%;
+        border: none;
+        outline: none;
+        transform: translateY(-30%);
+        background: #ff9900c7;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: 1.3em; }
+    .gallery-modal-profile h3 { font-size: 1.5em; }
+    .gallery-modal-profile h4 { font-size: 1.2em; }
+    .gallery-modal-profile-image { width: 90px; height: 90px; }
+    .seeTheComments { font-size: 1em; }
+    .next-gallery-image, .prev-gallery-image { font-size: 2em; }
+}
+
+@media screen and (max-width: 450px) and (max-height: 850px) {
+    .seeTheComments { font-size: .8em; width: 50%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1em; }
+    .gallery-modal-comments-container { width: 100%; height: 100%; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: .9em; width: 40%; }
+    .gallery-modal-profile h3 { font-size: 1.1em; }
+    .gallery-modal-profile h4 { font-size: .8em; }
+    .gallery-modal-profile-image { width: 70px; height: 70px; }
+    .gallery-modal-comment-img { margin-right: .3em; }
+}
+
+@media screen and (max-width: 850px) and (max-height: 450px) {
+    .seeTheComments { font-size: .8em; width: 30%; height: 8%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1em; }
+    .gallery-modal-comments-container { width: 100%; height: 100%; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: .9em; width: 40%; }
+    .gallery-modal-profile h3 { font-size: 1em; }
+    .gallery-modal-profile h4 { font-size: .7em; }
+    .gallery-modal-profile-image { width: 60px; height: 60px; }
+    .gallery-modal-comment-content { height: 65%; }
+    .modal-gallery-input { height: 13%; }
+    .image-content { width: 80%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1.8em; }
+    .modal-gallery-close { font-size: 2em; }
+}
+
+@media screen and (max-width: 360px) and (max-height: 650px) {
+    .seeTheComments { font-size: .7em; width: 50%; }
+}
+
+@media screen and (max-width: 650px) and (max-height: 370px) {
+    .seeTheComments { font-size: .7em; width: 35%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1.4em; }
+    .gallery-modal-comments-container { width: 100%; height: 100%; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: .9em; width: 40%; }
+    .gallery-modal-profile h3 { font-size: .9em; }
+    .gallery-modal-profile h4 { font-size: .6em; }
+    .gallery-modal-profile-image { width: 50px; height: 50px; }
+    .gallery-modal-comment-img { margin-right: .3em; }
+    .modal-gallery-close { font-size: 2em; }
+}
+
+@media screen and (max-width: 330px) and (max-height: 578px) {
+    .seeTheComments { font-size: .7em; width: 55%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1em; }
+    .gallery-modal-comments-container { width: 100%; height: 100%; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: .8em; width: 40%; }
+    .gallery-modal-profile h3 { font-size: .9em; }
+    .gallery-modal-profile h4 { font-size: .6em; }
+    .gallery-modal-profile-image { width: 50px; height: 50px; }
+    .gallery-modal-comment-img { margin-right: .3em; }
+    .modal-gallery-close { font-size: 2em; }
+}
+
+@media screen and (max-width: 578px) and (max-height: 330px) {
+    .seeTheComments { font-size: .7em; width: 55%; }
+    .next-gallery-image, .prev-gallery-image { font-size: 1em; }
+    .gallery-modal-comments-container { width: 100%; height: 100%; }
+    .modal-gallery-tools-comment, .modal-gallery-tools-like { font-size: .8em; width: 40%; }
+    .gallery-modal-profile h3 { font-size: .9em; }
+    .gallery-modal-profile h4 { font-size: .6em; }
+    .gallery-modal-profile-image { width: 50px; height: 50px; }
+    .gallery-modal-comment-img { margin-right: .3em; }
+    .modal-gallery-close { font-size: 1.5em; }
+}

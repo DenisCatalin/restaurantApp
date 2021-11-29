@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 import {useState, useEffect} from 'react'
 import Axios from 'axios'
 import ScheduleCard from "../../Components/schedule-card/schedule-card.component"
-import { OrangeUnderlined, ScheduleCards, ScheduleContainer, ScheduleContent, ScheduleHeader, ScheduleHeaderText, SchedulePageTitle } from "./schedule.styles"
+import { ScheduleCards, ScheduleContainer, ScheduleContent, ScheduleHeader, ScheduleHeaderText, SchedulePageTitle } from "./schedule.styles"
+import { OrangeUnderlined } from "../../globalStyles"
 
 const SchedulePage = () => {
     const [month, setMonth] = useState('Select month');
